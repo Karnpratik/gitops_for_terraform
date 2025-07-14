@@ -1,4 +1,4 @@
-name: Terraform CI/CD
+name: Terraform CI/CD For ec2
 
 on:
   pull_request:
