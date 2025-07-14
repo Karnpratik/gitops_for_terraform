@@ -1,7 +1,7 @@
 data "terraform_remote_state" "ec2" {
   backend = "s3"
   config = {
-    bucket = "pratik-bucketbackend"
+    bucket = "pratik-bucketbackend1"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
@@ -29,11 +29,8 @@ resource "aws_s3_bucket_policy" "policy" {
       "Principal": {
         "AWS": "${data.terraform_remote_state.ec2.outputs.ec2_instance_arn}"
       },
-      "Action": [
-        "s3:PutObject",
-        "s3:ListBucket"
-      ],
-      "Resource": "${aws_s3_bucket.pratik_bucket.arn}/*"
+      "Action": "s3:PutObject",
+      "Resource" : "${aws_s3_bucket.pratik_bucket.arn}/*"
     }
   ]
 }
