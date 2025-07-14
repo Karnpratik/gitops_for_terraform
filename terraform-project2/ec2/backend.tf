@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "pratik-bucketbackend"
+    bucket = "pratik-bucketbackend1"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
