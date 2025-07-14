@@ -33,7 +33,7 @@ resource "aws_s3_bucket_policy" "policy" {
         "s3:PutObject",
         "s3:ListBucket"
       ],
-      Resource = [
+      "Resource" : [
           "${aws_s3_bucket.pratik_bucket.arn}",
           "${aws_s3_bucket.pratik_bucket.arn}/"
       ]
