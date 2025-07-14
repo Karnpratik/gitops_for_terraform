@@ -47,7 +47,7 @@ jobs:
         working-directory: terraform-project2/ec2
         id: tflint
         run: |
-          tflint -f compac0t -no-color | tee tflint_op.txt
+          tflint -f compact -no-color | tee tflint_op.txt
           echo "exitcode=$?" >> $GITHUB_OUTPUT
 
       - name: comment terraform TFLint
